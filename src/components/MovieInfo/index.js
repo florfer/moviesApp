@@ -2,14 +2,16 @@ import React from 'react';
 import MovieData from './MovieData';
 import MoviePicture from './MoviePicture';
 import PropTypes from 'prop-types';
+import './styles.css';
 
-const MovieInfo = ({ name, premier, description, image }) => (
-    <div>
+const MovieInfo = ({ movieId, name, premier, description, image }) => 
+    (
+    <div className="movieInfoCont">
         <MoviePicture image={image} name={name}></MoviePicture>
-        <MovieData name={name} premier={premier} description={description}></MovieData>
+        <MovieData movieId={movieId} name={name} premier={premier} description={description}></MovieData>
     </div>
 );
-
+    
 MovieInfo.propTypes = {
     //tengo que validar bien la info!!!
     name: PropTypes.string.isRequired,

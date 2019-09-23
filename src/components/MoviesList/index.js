@@ -3,6 +3,7 @@ import MovieInfo from '../MovieInfo';
 import PropTypes from 'prop-types';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
+import './styles.css';
 
 const responsive = {
     desktop: {
@@ -28,6 +29,7 @@ const MoviesList = ({title, movies}) => {
             (
                 <MovieInfo
                     key={movie.id}
+                    movieId={movie.id}
                     name={movie.title}
                     premier={movie.release_date}
                     description={movie.overview}
@@ -35,33 +37,28 @@ const MoviesList = ({title, movies}) => {
                 ></MovieInfo>
             ))
     );
-   /* return(
-        <div>
-            <h1>TItulo</h1>
-            {strToComponents(movies)}
-        </div>
-    );*/
     return(
-        <div>
-        <h1>{title}</h1>
-        <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            autoPlay={false}
-            autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            //deviceType={this.props.deviceType}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-        >
+        <div className="moviesListCont">
+            <h2 className="moviesListTitle">{title}</h2>
+            <Carousel
+                swipeable={false}
+                draggable={false}
+                showDots={["desktop"]}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={false}
+                autoPlaySpeed={1000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                //deviceType={this.props.deviceType}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+                className ="carousel"
+            >
             {strToComponents(movies)}
         </Carousel>
     </div>

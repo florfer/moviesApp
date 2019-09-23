@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  
   color: white;
 }
 
@@ -30,4 +31,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.appCont{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h1{
+  color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px;
+  background-color: #0A0A36;
 }
