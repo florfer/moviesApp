@@ -9,22 +9,24 @@ import { getMoviesByType } from './../endpoints/movies';
 class MoviesListContainer extends Component {
     
     componentDidMount () {
-        getMoviesByType("now_playing")
-        .then(moviesNowPlaying => {
-            this.props.setNowPlayingMovies(moviesNowPlaying);
-            getMoviesByType("popular")
-            .then(moviesPopular => {
-                this.props.setPopularMovies(moviesPopular);
-                getMoviesByType("top_rated")
-                .then(moviesTopRated => {
-                    this.props.setTopRatedMovies(moviesTopRated);
-                    getMoviesByType("upcoming")
-                    .then(moviesUpcoming => {
-                        this.props.setUpcomingMovies(moviesUpcoming);
+        if (this.props.moviesNowPlaying.length === 0) {
+            getMoviesByType("now_playing")
+            .then(moviesNowPlaying => {
+                this.props.setNowPlayingMovies(moviesNowPlaying);
+                getMoviesByType("popular")
+                .then(moviesPopular => {
+                    this.props.setPopularMovies(moviesPopular);
+                    getMoviesByType("top_rated")
+                    .then(moviesTopRated => {
+                        this.props.setTopRatedMovies(moviesTopRated);
+                        getMoviesByType("upcoming")
+                        .then(moviesUpcoming => {
+                            this.props.setUpcomingMovies(moviesUpcoming);
+                        })
                     })
                 })
             })
-        })
+        }
     }
 
     render() {

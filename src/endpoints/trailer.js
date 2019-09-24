@@ -1,8 +1,8 @@
-import { urlByType } from './../services/urlByType';
+import { urlTrailer } from './../services/urlByType';
 
-export const getMoviesByType = (type) => {
+export const getTrailerById = (id) => {
     return new Promise((resolve, reject) => {
-        fetch(urlByType(type))
+        fetch(urlTrailer(id))
         .then(response => {
             return response.json();
         })
@@ -10,7 +10,7 @@ export const getMoviesByType = (type) => {
             resolve(responseBody.results);
         })
         .catch(function(error) {
-            console.log('Error fetching movies:' + error.message);
+            console.log('Error fetching trailer:' + error.message);
             reject(error)
         });
     })

@@ -4,8 +4,7 @@ import MoviePicture from './MoviePicture';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const MovieInfo = ({ movieId, name, premier, description, image }) => 
-    (
+const MovieInfo = ({ movieId, name, premier, description, image }) => (
     <div className="movieInfoCont">
         <MoviePicture image={image} name={name}></MoviePicture>
         <MovieData movieId={movieId} name={name} premier={premier} description={description}></MovieData>
@@ -13,7 +12,7 @@ const MovieInfo = ({ movieId, name, premier, description, image }) =>
 );
     
 MovieInfo.propTypes = {
-    //tengo que validar bien la info!!!
+    movieId: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     premier: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,

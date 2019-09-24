@@ -1,19 +1,4 @@
-.moviesListCont{
-   /*  width: 100%; */
-    
-}
-
 .moviesListTitle{
     color: #0A0A36;
     font-family: 'Roboto', sans-serif;
-}
-
-/* .carousel{
- background-color: #0A0A36; 
- padding: 10PX;
- 
-} */
-.react-multi-carousel_arrow{
-    background-color:hotpink !important;
-
 }

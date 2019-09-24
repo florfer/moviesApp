@@ -66,6 +66,7 @@ const MoviesList = ({title, movies}) => {
 };
 
 MoviesList.propTypes = {
+    title: PropTypes.string.isRequired,
     movies: PropTypes.array.isRequired,
 };
 

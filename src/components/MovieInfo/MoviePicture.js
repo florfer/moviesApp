@@ -9,9 +9,11 @@ const MoviePicture = ({ image, name }) => {
     <div className="moviePictureCont"> 
         <img src ={imageUrl} alt={`"${name}"`}/>
     </div>
-);
+    );
 }
+
 MoviePicture.propTypes = {
+    name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
 };
 
