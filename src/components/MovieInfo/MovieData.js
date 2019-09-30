@@ -13,9 +13,9 @@ const MovieData = ({ movieId, name, premier, description }) => {
     return (
         <div className="movieDataCont">
             <h3>{`${name}`}</h3>
-            <p>{date}</p><br></br>
-            <span>{`${desc}`}</span><br></br>
-            <Link to={url} >Watch trailer</Link>
+            <p>{date}</p>
+            <span>{`${desc}`}</span>
+            <Link to={url} className="dataLink">Watch trailer</Link>
         </div>
     );
 }

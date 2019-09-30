@@ -2,6 +2,7 @@ import React from 'react';
 import MovieInfo from '../MovieInfo';
 import PropTypes from 'prop-types';
 import Carousel from 'react-multi-carousel';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import "react-multi-carousel/lib/styles.css";
 import './styles.css';
 
@@ -24,6 +25,11 @@ const responsive = {
 };
 
 const MoviesList = ({title, movies}) => {
+    if (movies.length === 0) {
+        return (
+            <CircularProgress sie={50}/> 
+        );
+    }
     const strToComponents = movies =>(
         movies.map( movie =>
             (
@@ -37,15 +43,16 @@ const MoviesList = ({title, movies}) => {
                 ></MovieInfo>
             ))
     );
+    
     return(
         <div className="moviesListCont">
             <h2 className="moviesListTitle">{title}</h2>
             <Carousel
                 swipeable={false}
-                draggable={false}
-                showDots={["desktop"]}
+                draggable={true}
+                showDots={false}
                 responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
+                ssr={true}
                 infinite={true}
                 autoPlay={false}
                 autoPlaySpeed={1000}
@@ -53,11 +60,16 @@ const MoviesList = ({title, movies}) => {
                 customTransition="all .5"
                 transitionDuration={500}
                 containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                //deviceType={this.props.deviceType}
+                removeArrowOnDeviceType={[]}
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
                 className ="carousel"
+                beforeChange={function(next,_ref)
+                    {
+                        console.log("_ref", _ref);
+                        return;
+                    }}
+  
             >
             {strToComponents(movies)}
         </Carousel>

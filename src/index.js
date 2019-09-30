@@ -8,11 +8,9 @@ import { store } from './store';
 import './index.css';
 
 ReactDOM.render(
-  <BrowserRouter>
     <Provider store={store}>
       <App />
-    </Provider>
-  </BrowserRouter>, document.getElementById('root')
+    </Provider>, document.getElementById('root')
 );
 
 serviceWorker.unregister();

@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from './store';
-import App from './App';
+import MovieTrailer from './../components/MovieTrailer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Provider store={store}><App /></Provider>, div);
+  const trailer = [];
+  ReactDOM.render(<MovieTrailer trailer = { trailer } />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

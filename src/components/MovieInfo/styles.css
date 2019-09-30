@@ -1,42 +1,38 @@
 .movieInfoCont{
     margin: 10px;
-    height: 310px;
+    height: 250px;
     display: flex;
     padding:5px;
     border: thin solid grey;
     border-radius: 5px;
     box-shadow: #0A0A36 4px 4px 1px 1px;
     margin-bottom: 30px;
+    flex-direction: column;
 }
 
 .moviePictureCont{
-    width: 38%;
-    padding: 1%;
     float: left;
+    height: 100%;
 }
 
-.movieDataCont{
-    width: 58%;
+.movieDataCont{  
+    width: 100%;
     padding: 1%;
     box-sizing: border-box;
-    border-radius: 5px; 
+    border-radius: 5px;
     float: right;
+    height: 30%;
 }
 
-.movieDataCont h3, .movieDataCont p {
+.movieDataCont h3, .movieDataCont p{
     text-align: center;
     margin: 0;
     padding: 1%;
     font-family: 'Roboto', sans-serif;
 }
-
-.movieDataCont span {
-    display: inline-block;
-    margin: 0;
-    padding: 1%;
-    color: dimgray;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+.dataLink{
+    display: block;
+    text-align: end;
 }
 
 .movieDataCont p {
@@ -45,5 +41,47 @@
 
 .moviePictureCont img{
     width: 100%;
-    margin-top: 40px;
+    height: 100%;
+}
+
+@media (min-width: 0px){
+    .movieDataCont span{
+      display: none;
+    }
+}
+
+@media (min-width:1025px){
+    .movieInfoCont{
+        flex-direction: row;
+    }
+    .moviePictureCont{
+        width: 38%;
+        padding: 1%;
+        float: left;
+    }
+    .movieDataCont{
+        width: 58%;
+        padding: 1%;
+        box-sizing: border-box;
+        border-radius: 5px; 
+        float: right;
+    }
+    .movieDataCont span{
+        display: inline-block;
+      }
+      .movieInfoCont{
+          height: 310px;
+      }
+      .movieDataCont span {
+        display: inline-block;
+        margin: 0;
+        padding: 1%;
+        color: dimgray;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+    }
+    .moviePictureCont img{
+        width: 100%;
+        margin-top: 40px;
+    }
 }

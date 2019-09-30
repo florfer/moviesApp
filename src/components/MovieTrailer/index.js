@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Trailer from './Trailer';
 import GoBack from './GoBack';
 import './styles.css';
@@ -8,7 +9,7 @@ const MovieTrailer = ({trailer}) =>{
     //elemento poner cargando... 
     if (!trailer[0]){
         return (
-            <div>hola</div>
+            <CircularProgress sie={50}/> 
         );
     }
 
