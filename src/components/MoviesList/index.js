@@ -69,7 +69,6 @@ const MoviesList = ({title, movies}) => {
                         console.log("_ref", _ref);
                         return;
                     }}
-  
             >
             {strToComponents(movies)}
         </Carousel>

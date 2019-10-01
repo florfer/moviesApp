@@ -7,7 +7,7 @@ const MoviePicture = ({ image, name }) => {
     const imageUrl = `${IMAGE_BASE_URL}${image}`;
     return(
     <div className="moviePictureCont"> 
-        <img src ={imageUrl} alt={`"${name}"`}/>
+        <img src ={imageUrl} alt={`"${name}"`} className="img-fluid"/>
     </div>
     );
 }

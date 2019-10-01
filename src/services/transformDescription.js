@@ -1,7 +1,7 @@
 const transformDescription= description => {
     let desc = description;
-    if(description.length > 200){
-        desc = description.substring(0, 200) + "...";
+    if(description.length > 150){
+        desc = description.substring(0, 150) + "...";
     }
     return desc;
 };

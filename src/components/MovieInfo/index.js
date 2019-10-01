@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const MovieInfo = ({ movieId, name, premier, description, image }) => (
-    <div className="movieInfoCont">
-        <MoviePicture image={image} name={name}></MoviePicture>
-        <MovieData movieId={movieId} name={name} premier={premier} description={description}></MovieData>
+    <div className="movieInfoCont row">
+        <MoviePicture image={image} name={name} className="col-xs-12 col-lg-4"></MoviePicture>
+        <MovieData movieId={movieId} name={name} premier={premier} description={description} className="col-xs-12 col-lg-8"></MovieData>
     </div>
 );
     
