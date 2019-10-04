@@ -19,8 +19,13 @@ yarn start
 
 The apllication will be available on localhost:3000 
 
+## Configuration and setup
+
+To run the project its required node version 10.16.3 or higher.
+
+The application was created using [Create React App](https://create-react-app.dev/docs/getting-started) this includes a set of scripts executed with react-scripts library. The scripts available are start, build, test and eject.
+
 ## Description
-The application was created using [Create React App](https://create-react-app.dev/docs/getting-started)
 
 ### Containers and Components 
 The application is composed of components and containers. 

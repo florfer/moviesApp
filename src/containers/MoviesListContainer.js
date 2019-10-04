@@ -8,28 +8,47 @@ import { getMoviesByType } from './../endpoints/movies';
 
 class MoviesListContainer extends Component {
     
+    constructor(props) {
+        super(props);
+        this.state = {
+          error: false,
+        };
+      }
+    
     componentDidMount () {
-        if (this.props.moviesNowPlaying.length === 0) {
-            getMoviesByType("now_playing")
-            .then(moviesNowPlaying => {
-                this.props.setNowPlayingMovies(moviesNowPlaying);
-                getMoviesByType("popular")
-                .then(moviesPopular => {
-                    this.props.setPopularMovies(moviesPopular);
-                    getMoviesByType("top_rated")
-                    .then(moviesTopRated => {
-                        this.props.setTopRatedMovies(moviesTopRated);
-                        getMoviesByType("upcoming")
-                        .then(moviesUpcoming => {
-                            this.props.setUpcomingMovies(moviesUpcoming);
-                        })
-                    })
+        const { moviesNowPlaying } = this.props;
+        if (moviesNowPlaying && moviesNowPlaying.length === 0) {
+            let types = [
+                'now_playing',
+                'popular',
+                'top_rated',
+                'upcoming'
+            ];
+            
+            let requests = types.map(type => getMoviesByType(type));
+            
+            Promise.all(requests)
+                .then(responses => {
+                    this.props.setNowPlayingMovies(responses[0]);
+                    this.props.setPopularMovies(responses[1]);
+                    this.props.setTopRatedMovies(responses[2]);
+                    this.props.setUpcomingMovies(responses[3]);
                 })
-            })
+                .catch(error => { 
+                    console.log(error)
+                    this.setState ({
+                        error: true,
+                    });
+                });
         }
-    }
+    } 
 
     render() {
+        const { error } = this.state;
+        if (error) {
+            return <p>"An error occurred, please refresh de page"</p>;
+        }
+        
         const {moviesNowPlaying, moviesPopular, moviesTopRated, moviesUpcoming} = this.props; 
         return (
             <div>

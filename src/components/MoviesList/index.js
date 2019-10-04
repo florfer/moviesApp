@@ -2,8 +2,8 @@ import React from 'react';
 import MovieInfo from '../MovieInfo';
 import PropTypes from 'prop-types';
 import Carousel from 'react-multi-carousel';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import "react-multi-carousel/lib/styles.css";
+import Loader from './../common/Loader';
 import './styles.css';
 
 const responsive = {
@@ -25,9 +25,9 @@ const responsive = {
 };
 
 const MoviesList = ({title, movies}) => {
-    if (movies.length === 0) {
+    if (movies && movies.length === 0) {
         return (
-            <CircularProgress sie={50}/> 
+            <Loader/> 
         );
     }
     const strToComponents = movies =>(
@@ -64,11 +64,6 @@ const MoviesList = ({title, movies}) => {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
                 className ="carousel"
-                beforeChange={function(next,_ref)
-                    {
-                        console.log("_ref", _ref);
-                        return;
-                    }}
             >
             {strToComponents(movies)}
         </Carousel>

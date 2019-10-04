@@ -9,13 +9,12 @@ class MovieTrailerContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            id: this.props.match.params.id,
             trailer: [],
         };
     }
     
     componentDidMount () {
-        getTrailerById(this.state.id)
+        getTrailerById(this.props.match.params.id)
         .then(trailer => {
             this.setState({trailer: trailer});
         })

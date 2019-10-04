@@ -2,3 +2,14 @@
     color: #0A0A36;
     font-family: 'Roboto', sans-serif;
 }
+
+.react-multiple-carousel__arrow {
+    position: absolute;
+    bottom: 20px;
+    background-color: #0A0A36;
+}
+
+
+
+
+

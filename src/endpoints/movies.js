@@ -1,17 +1,17 @@
 import { urlByType } from './../services/urlByType';
 
 export const getMoviesByType = (type) => {
-    return new Promise((resolve, reject) => {
-        fetch(urlByType(type))
+    return fetch(urlByType(type))
         .then(response => {
-            return response.json();
+            if (response.ok) {
+                return response.json();
+            }
         })
         .then(responseBody => {
-            resolve(responseBody.results);
+            return responseBody.results;
         })
-        .catch(function(error) {
+        .catch(error => {
             console.log('Error fetching movies:' + error.message);
-            reject(error)
+            throw error;
         });
-    })
 };

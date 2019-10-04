@@ -1,6 +1,5 @@
 .movieInfoCont{
-    margin: 10px;
-    margin-bottom: 30px;
+    margin: 10px 10px 80px 10px;
     height: 250px;
     padding:5px;
     border: thin solid grey;
@@ -36,7 +35,6 @@
     text-align: center;
     margin: 0;
     padding: 1%;
-    font-family: 'Roboto', sans-serif;
 }
 
 .dataLink{
@@ -56,33 +54,42 @@
     }
 }
 
-@media (min-width:1025px){
+@media (min-width:768px){
     .moviePictureCont{
         width: 38%;
         padding: 1%;
         float: left;
+        display: block;
+        margin: auto 0;
     }
     .movieDataCont{
         width: 58%;
+        height: 100%;
+        margin: auto 0;
         padding: 1%;
-        box-sizing: border-box;
-        border-radius: 5px; 
         float: right;
     }
       .movieInfoCont{
-          height: 310px;
+          height: 280px;
       }
       .movieDataCont span {
         display: inline-block;
         margin: 0;
-        padding: 1%;
+        padding: 4% 1% 1% 1%;
         color: dimgray;
-        font-family: 'Roboto', sans-serif;
         font-size: 0.9rem;
-        padding-top: 4%;
     }
     .moviePictureCont img{
         width: 100%;
-        margin-top: 40px;
     }
+}
+
+@media (min-width:1024px){
+    .movieInfoCont{
+        height: 300px;
+    }
+}
+
+.fontFamily{
+    font-family: 'Roboto', sans-serif;
 }

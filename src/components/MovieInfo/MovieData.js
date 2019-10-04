@@ -12,10 +12,10 @@ const MovieData = ({ movieId, name, premier, description }) => {
     const desc = transformDescription(description);
     return (
         <div className="movieDataCont">
-            <h3>{`${name}`}</h3>
-            <p>{date}</p>
-            <span>{`${desc}`}</span>
-            <Link to={url} className="dataLink">Watch trailer</Link>
+            <h3 className="fontFamily">{`${name}`}</h3>
+            <p className="fontFamily">{date}</p>
+            <span className="fontFamily">{`${desc}`}</span>
+            <Link to={url} className="dataLink fontFamily">Watch trailer</Link>
         </div>
     );
 }
