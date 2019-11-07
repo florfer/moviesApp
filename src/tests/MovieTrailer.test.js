@@ -11,7 +11,6 @@ it('renders without crashing', () => {
         id: 456456,
     }
   };
-  /* const trailer = []; */
   ReactDOM.render(<Provider store={store}><MovieTrailer match={ match } /></Provider>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
